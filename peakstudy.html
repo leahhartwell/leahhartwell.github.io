@@ -1,0 +1,425 @@
+<!--DOCTYPE html-->
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!-- using robot-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- for mobile screen rendering-->
+    <title>PeakStudy</title>
+    <link rel="shortcut icon" href="./images/PersonalLogo.svg" type="image/x-icon" />
+
+    <style>
+        h1 {
+            font-family: 'Roboto';
+            position: absolute;
+            left: 80px;
+            top: 12px;
+            font-size: 45px;
+            font-style: normal;
+            font-weight: 900;
+            color: white;
+        }
+        
+        .titleBlockUpper {
+            z-index: -1;
+            position: absolute;
+            width: 270px;
+            height: 60px;
+            left: 60px;
+            top: 40px;
+            background: #37376b;
+        }
+        
+        .titleBlockLower {
+            z-index: -2;
+            position: absolute;
+            width: 270px;
+            height: 60px;
+            left: 70px;
+            top: 50px;
+            background: #36363b;
+        }
+        
+        label {
+            font-family: 'Roboto';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: bold;
+            color: white;
+        }
+        
+        h2 {
+            position: absolute;
+            top: 110px;
+            left: 60px;
+            font-family: 'Roboto';
+            font-size: 30px;
+            font-style: normal;
+            font-weight: bold;
+            color: white;
+        }
+        
+        fieldset {
+            position: absolute;
+            left: 60px;
+            top: 120px;
+            display: block;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            padding-left: 1em;
+            padding-right: 1em;
+            border: 20px solid;
+            border-color: white;
+        }
+        
+        results {
+            position: absolute;
+            left: 350px;
+            top: 0px;
+        }
+        
+        opt {
+            position: absolute;
+            left: 900px;
+            top: 0px;
+        }
+        
+        body {
+            background-color: #201740;
+        }
+        
+        table {
+            position: absolute;
+            top: 180px;
+            left: 60px;
+            padding: 5px;
+            background: #37376b;
+        }
+        
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            font-family: 'Roboto';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: normal;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titleBlockUpper"></div>
+    <div class="titleBlockLower"></div>
+    <h1>PeakStudy</h1>
+    <h2> Add Task </h2>
+    <table>
+        <tr>
+            <td><label for="task">Name</label></td>
+            <td><input type="text" id="task" name="task"></td>
+        </tr>
+        <tr>
+            <td><label for="taskType">Type</label></td>
+            <td><select id="taskType" name="taskType">
+            <option value="">(Select option)</option>
+            <option value="Assignment">Assignment</option>
+            <option value="Webwork">Webwork</option>
+            <option value="Pre-Lab">Pre-Lab</option>
+            <option value="Essay">Essay</option>
+            <option value="Project">Project</option>
+            <option value="Report">Report</option>
+            <option value="Notes">Notes</option>
+            <option value="Study">Study</option>
+          </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="course">Course</label></td>
+            <td><input type="text" id="course" name="course"><br></td>
+        </tr>
+        <tr>
+            <td><label for="courseDiff">Difficulty</label></td>
+            <td><input type="range" id="courseDiff" name="courseDiff" min="1" max="10"></td>
+        </tr>
+        <tr>
+            <td><label for="dueDate">Due</label></td>
+            <td><input type="date" id="dueDate" name="dueDate"></td>
+        </tr>
+        <tr>
+            <td><label for="duration">Duration</label></td>
+            <td><select id="duration" name="duration">
+            <option value="">(Select option)</option>
+            <option value="48hrs">48hrs+</option>
+            <option value="24hrs">24hrs+</option>
+            <option value="10hrs">10hrs+</option>
+            <option value="6hrs">6hrs+</option>
+            <option value="4hrs">4hrs+</option>
+            <option value="3hrs">3hrs+</option>
+            <option value="2hrs">2hrs+</option>
+            <option value="1hr">1hr+</option>
+            <option value="30mins">30mins+</option>
+          </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Priority">Priority</label></td>
+            <td><input type="range" id="priority" name="priority" min="1" max="3"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="add" value="Add Task" onclick="adddata()"></td>
+        </tr>
+    </table>
+
+
+
+    <results>
+        <h2>Tasks</h2>
+        <table id="input" class="w3-table">
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Type</b></td>
+                <td><b>Course</b></td>
+                <td><b>Difficulty</b></td>
+                <td><b>Due</b></td>
+                <td><b>Duration</b></td>
+                <td><b>Priority</b></td>
+            </tr>
+        </table>
+    </results>
+    <opt>
+        <h2>Optimized</h2>
+        <table id="sort" class="w3-table">
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Type</b></td>
+                <td><b>Course</b></td>
+                <td><b>Difficulty</b></td>
+                <td><b>Due</b></td>
+                <td><b>Duration</b></td>
+                <td><b>Priority</b></td>
+                <td><b>Weight</b></td>
+            </tr>
+        </table>
+    </opt>
+    <script>
+        var itask = document.getElementById("task");
+        var itype = document.getElementById("taskType");
+        var icourse = document.getElementById("course");
+        var idiff = document.getElementById("courseDiff");
+        var idue = document.getElementById("dueDate");
+        var idur = document.getElementById("duration");
+        var ipriority = document.getElementById("priority");
+        var weights = [];
+
+        var bigTable = [
+            ["SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL"],
+            ["SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL", "SENTINEL"],
+        ];
+
+        function adddata() {
+            var ctask = itask;
+            var ctype = itype;
+            var ccourse = icourse;
+            var cdiff = idiff;
+            var cdue = idue;
+            var cdur = idur;
+            var cpriority = ipriority;
+            var table = document.getElementById("input");
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+            var flag = 0;
+
+            //check if we are in initial row
+            if (bigTable[0][0] == "SENTINEL" && bigTable[0][1] == "SENTINEL" && bigTable[0][2] == "SENTINEL" && bigTable[0][3] == "SENTINEL" && bigTable[0][4] == "SENTINEL" && bigTable[0][5] == "SENTINEL" && bigTable[0][6] == "SENTINEL") {
+                //if we are...
+                //FILL the row (a.k.a. don't push)
+                row.insertCell(0).innerHTML = ctask.value;
+                row.insertCell(1).innerHTML = ctype.value;
+                row.insertCell(2).innerHTML = ccourse.value;
+                row.insertCell(3).innerHTML = cdiff.value;
+                row.insertCell(4).innerHTML = cdue.value;
+                row.insertCell(5).innerHTML = cdur.value;
+                row.insertCell(6).innerHTML = cpriority.value;
+
+
+                //and fill bigTable for future comparisons
+                bigTable[0][0] = ctask.value;
+                bigTable[0][1] = ctype.value;
+                bigTable[0][2] = ccourse.value;
+                bigTable[0][3] = cdiff.value;
+                bigTable[0][4] = cdue.value;
+                bigTable[0][5] = cdur.value;
+                bigTable[0][6] = cpriority.value;
+
+            } //close if loop
+            else { //if we are not in initial row...
+                for (var i = 0; i < table.rows.length - 1; i++) {
+                    if (ctask.value == bigTable[i][0] && ctype.value == bigTable[i][1] && ccourse.value == bigTable[i][2] && cdiff.value == bigTable[i][3] && cdue.value == bigTable[i][4] && cdur.value == bigTable[i][5] && cpriority.value == bigTable[i][6]) {
+
+                        //if it is identical...
+                        //check to see if you still want to add it
+                        if (confirm("Alert: You have already added this task. Would you like to add it again?")) {
+                            //if you still want to add the identical row
+                            flag = 1;
+                        } else {
+                            //if it is identical and you DON'T want to add it
+                            flag = 2;
+                        }
+                    } //close if loop
+                } //close for loop
+
+                switch (flag) {
+                    case 1: //you want to add an identical row
+                        row.insertCell(0).innerHTML = ctask.value;
+                        row.insertCell(1).innerHTML = ctype.value;
+                        row.insertCell(2).innerHTML = ccourse.value;
+                        row.insertCell(3).innerHTML = cdiff.value;
+                        row.insertCell(4).innerHTML = cdue.value;
+                        row.insertCell(5).innerHTML = cdur.value;
+                        row.insertCell(6).innerHTML = cpriority.value;
+
+                        bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cdur.value, cpriority.value]);
+                        break;
+                    case 2: //you don't want to add an identical row
+                        bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cdur.value, cpriority.value]);
+                        break;
+                    default:
+                        row.insertCell(0).innerHTML = ctask.value;
+                        row.insertCell(1).innerHTML = ctype.value;
+                        row.insertCell(2).innerHTML = ccourse.value;
+                        row.insertCell(3).innerHTML = cdiff.value;
+                        row.insertCell(4).innerHTML = cdue.value;
+                        row.insertCell(5).innerHTML = cdur.value;
+                        row.insertCell(6).innerHTML = cpriority.value;
+
+                        //and copy value to bigTable to check against future rows
+                        bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cdur.value, cpriority.value]);
+                }
+                flag = 0;
+            } //close outer else
+            //} //close function (commented out in favour of final bracket in last line)
+
+            var typeWeight = 0;
+            var diffWeight = cdiff.value / 10 * .0455;
+            var dueWeight = 0;
+            var durWeight = 0;
+            var priorityWeight = cpriority.value / 3 * 0.3078;
+
+            switch (cdur.value) {
+                case "48hrs":
+                    durWeight = (10 / 10) * 0.134;
+                    break;
+                case "24hrs":
+                    durWeight = (9 / 10) * 0.134;
+                    break;
+                case "16hrs":
+                    durWeight = (8 / 10) * 0.134;
+                    break;
+                case "10hrs":
+                    durWeight = (7 / 10) * 0.134;
+                    break;
+                case "6hrs":
+                    durWeight = (6 / 10) * 0.134;
+                    break;
+                case "4hrs":
+                    durWeight = (5 / 10) * 0.134;
+                    break;
+                case "3hrs":
+                    durWeight = (4 / 10) * 0.134;
+                    break;
+                case "2hrs":
+                    durWeight = (3 / 10) * 0.134;
+                    break;
+                case "1hr":
+                    durWeight = (2 / 10) * 0.134;
+                    break;
+                case "30mins":
+                    durWeight = (1 / 10) * 0.134;
+                    break;
+            }
+
+            var dueDate = new Date(cdue.value);
+            var dueMonth = dueDate.getMonth() + 1;
+            var dueDay = dueDate.getDate() + 1
+
+            var today = new Date();
+            var currMonth = today.getMonth() + 1;
+            var currDay = today.getDate();
+
+            var tillDue = (dueMonth - currMonth) * 30 + (dueDay - currDay);
+
+            if ((tillDue) <= 1) {
+                dueWeight = (10 / 10) * 0.4527;
+            } else if (((tillDue) <= 2) && ((tillDue) > 1)) {
+                dueWeight = (9 / 10) * 0.4527;
+            } else if (((tillDue) <= 3) && ((tillDue) > 2)) {
+                dueWeight = (8 / 10) * 0.4527;
+            } else if (((tillDue) <= 5) && ((tillDue) > 3)) {
+                dueWeight = (7 / 10) * 0.4527;
+            } else if (((tillDue) <= 7) && ((tillDue) > 5)) {
+                dueWeight = (6 / 10) * 0.4527;
+            } else if (((tillDue) <= 10) && ((tillDue) > 7)) {
+                dueWeight = (5 / 10) * 0.4527;
+            } else if (((tillDue) <= 14) && ((tillDue) > 10)) {
+                dueWeight = (4 / 10) * 0.4527;
+            } else if (((tillDue) <= 20) && ((tillDue) > 14)) {
+                dueWeight = (3 / 10) * 0.4527;
+            } else if (((tillDue) <= 30) && ((tillDue) > 20)) {
+                dueWeight = (2 / 10) * 0.4527;
+            } else if ((tillDue) > 30) {
+                dueWeight = (1 / 10) * 0.4527;
+            }
+
+            switch (ctype.value) {
+                case "Project":
+                    typeWeight = (10 / 10) * 0.06;
+                    break;
+                case "Report":
+                    typeWeight = (9 / 10) * 0.06;
+                    break;
+                case "Essay":
+                    typeWeight = (8 / 10) * 0.06;
+                    break;
+                case "Assignment":
+                    typeWeight = (7 / 10) * 0.06;
+                    break;
+                case "Webwork":
+                    typeWeight = (6 / 10) * 0.06;
+                    break;
+                case "Pre-Lab":
+                    typeWeight = (5 / 10) * 0.06;
+                    break;
+                case "Notes":
+                    typeWeight = (4 / 10) * 0.06;
+                    break;
+                case "Study":
+                    typeWeight = (3 / 10) * 0.06;
+                    break;
+            }
+            var totalWeight = typeWeight + diffWeight + dueWeight + priorityWeight + durWeight;
+
+            weights.push(totalWeight);
+            weights.sort(function(a, b) {
+                return b - a
+            });
+            console.log(weights);
+
+            var table = document.getElementById("sort");
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+            row.insertCell(0).innerHTML = ctask.value;
+            row.insertCell(1).innerHTML = typeWeight;
+            row.insertCell(2).innerHTML = ccourse.value;
+            row.insertCell(3).innerHTML = diffWeight;
+            row.insertCell(4).innerHTML = dueWeight;
+            row.insertCell(5).innerHTML = durWeight;
+            row.insertCell(6).innerHTML = priorityWeight;
+            row.insertCell(7).innerHTML = totalWeight;
+        }
+    </script>
+
+</body>
+
+</html>

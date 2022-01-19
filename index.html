@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Leah Hartwell's Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
     <meta property="og:url" content="http://leah.hartwell.tech" />
     <meta property="og:type" content="website" />
@@ -34,34 +34,37 @@
 
 <body>
     <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="#home">
-            <img src="./images/PersonalLogo.svg" style="width: 175px; height: auto; padding: 5px">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#home">
+                <img src="./images/PersonalLogo.svg" style="width: 175px; height: auto; padding: 5px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav mr-auto">
-                <a class="nav-link" href="#about">ABOUT</a>
-                <a class="nav-link" href="#skills">SKILLS</a>
-                <a class="nav-link" href="#education">EDUCATION</a>
-                <a class="nav-link" href="#work">WORK</a>
-                <a class="nav-link" href="https://leahhartwell.notion.site/4172dd1bb51147ba9fcf077c3da807e9?v=7f8527dcdcd440a3b2b8dbefaf39772d" target="_blank">PROJECTS</a>
-            </div>
-            <div class="navbar-nav ml-auto">
-                <a class="nav-link" href="mailto:leahh222@student.ubc.ca" target="_blank">
-                    <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="./images/email.png" style="width: 35px; height: auto;">
-                </a>
-                <a class="nav-link" href="https://www.linkedin.com/in/leahhlhartwell" target="_blank">
-                    <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                    <img src="./images/linkedin.png" style="width: 30px; height: auto;">
-                </a>
-                <a class="nav-link" href="https://medium.com/@leahhartwell" target="_blank">
-                    <img src="./images/medium.svg" style="width: 30px; height: auto;">
-                </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-link" href="#about">ABOUT</a>
+                    <a class="nav-link" href="#skills">SKILLS</a>
+                    <a class="nav-link" href="#education">EDUCATION</a>
+                    <a class="nav-link" href="#work">WORK</a>
+                    <a class="nav-link" href="https://leahhartwell.notion.site/4172dd1bb51147ba9fcf077c3da807e9?v=7f8527dcdcd440a3b2b8dbefaf39772d" target="_blank">PROJECTS</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="mailto:leahh222@student.ubc.ca" target="_blank">
+                        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="./images/email.png" style="width: 35px; height: auto;">
+                    </a>
+                    <a class="nav-link" href="https://www.linkedin.com/in/leahhlhartwell" target="_blank">
+                        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                        <img src="./images/linkedin.png" style="width: 30px; height: auto;">
+                    </a>
+                    <a class="nav-link" href="https://medium.com/@leahhartwell" target="_blank">
+                        <img src="./images/medium.svg" style="width: 30px; height: auto;">
+                    </a>
+                </div>
             </div>
         </div>
+       
     </nav>
 
     <div id="home" class="container-fluid p-0">
@@ -73,8 +76,14 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
                 <img src=" ./images/UBCcardpic.jpg " style="width: 130px; height: auto; " class="rounded-circle d-inline">
-                <h1 class="display-4 d-inline" style="margin-left: 2rem;">Hi, I'm Leah!</h1>
-            </div>
+                <div class="row">
+                    <h1 class="display-3 d-inline" style="margin-left: 2rem;">Hi, I'm Leah!</h1>
+                    <small class="text-muted d-inline" style="margin-left: 2rem;">Vancouver, BC | Waterloo, ON</small>
+                    <small class="d-inline" style="margin-left: 2rem;">Software & Hardware Engineer @ <strong>BlackBerry</strong></small>
+                    <small class="d-inline" style="margin-left: 2rem;">4th Year Mechanical Engineering Student @ <strong>The University of British Columbia</strong></small>
+                </div>
+                
+            </div>              
         </div>
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
@@ -106,7 +115,7 @@
         <div class="container" style="padding-top: 40px; padding-left: 0px; padding-right: 0px">
             <div class="jumbotron m-0">
                 <div class="row m-3">
-                    <h1 class="display-4">FEATURED PROJECTS</h1>
+                    <h1 class="display-5">FEATURED PROJECTS</h1>
                     <p class="lead">Here are a few of my favourite projects that I have worked on, click on the cards for individual project details and the button below to see my current project portfolio!</p>
                     <p class="lead">
                       <a class="btn btn-primary btn-md" href="https://leahhartwell.notion.site/leahhartwell/4172dd1bb51147ba9fcf077c3da807e9?v=7f8527dcdcd440a3b2b8dbefaf39772d" target="_blank" role="button">Full Technical Project Portfolio</a>
@@ -144,103 +153,110 @@
 
     <div id="skills" class="container" style="padding-top: 150px">
         <div class="row">
-            <h1 class="display-4 font-weight-bold">TECHNICAL SKILLS</h1>
+            <h1 class="display-5 fw-bold">TECHNICAL SKILLS</h1>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="d-flex align-items-center" style="padding-top: 20px; padding-bottom: 1rem;">
+                <div class="d-flex align-items-center" style="padding-top: 40px; padding-bottom: 1rem;">
                     <img src=" ./images/software.svg" style="width: 60px; height: auto; " class="rounded d-inline">
-                    <h1 class="display-4 d-inline" style="margin-left: 10px">Software</h1>
+                    <h1 class="display-5 d-inline" style="margin-left: 10px">Software</h1>
                 </div>
                 <div>
-                    <p class="text-left font-weight-bold lead">CAD/FEA/CFD</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">SolidWorks</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">OnShape</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">AutoCAD</span>
+                    <p class="text-left fw-bold lead">CAD/FEA/CFD</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">SolidWorks</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">OnShape</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">AutoCAD</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Data Analysis</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">MATLAB</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Maple</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Excel</span>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Data Analysis</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">MATLAB</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Maple</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Excel</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem;">Languages</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Python</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Bash</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">C/C++</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">HTML/CSS/Javascript</span>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem;">Languages</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Python</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Bash</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">C#</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">C/C++</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">HTML/CSS/Javascript</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Machine Learning</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">TensorFlow</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">PyTorch</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">scikit-learn</span>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Machine Learning</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">TensorFlow</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">PyTorch</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">scikit-learn</span>
+                </div>
+                <div>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Version Control</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Git/GitHub</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Gerrit</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Subversion</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="d-flex align-items-center" style="padding-top: 20px; padding-bottom: 1rem;">
+                <div class="d-flex align-items-center" style="padding-top: 40px; padding-bottom: 1rem;">
                     <img src=" ./images/hardware.svg" style="width: 60px; height: auto; " class="rounded d-inline">
-                    <h1 class="display-4 d-inline" style="margin-left: 10px;">Hardware</h1>
+                    <h1 class="display-5 d-inline" style="margin-left: 10px;">Hardware</h1>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead">Machining</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">3D Printer</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Mill</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Lathe</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Drill</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Band Saw</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Water Jet</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Spot Weld</span>
+                    <p class="text-uppercase text-left fw-bold lead">Machining</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">3D Printer</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Mill</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Lathe</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Drill</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Band Saw</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Water Jet</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Spot Weld</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Microcontrollers</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Raspberry Pi</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Arduino</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Microchip PIC</span>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Microcontrollers</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Raspberry Pi</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Arduino</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Microchip PIC</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Actuators/Sensors</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Pumps</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Motors</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Infrared Sensor</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Flow Rate Sensor</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Pressure Sensor</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Temperature Sensor</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Photocell</span>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Actuators/Sensors</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Pumps</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Motors</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Infrared Sensor</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Flow Rate Sensor</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Pressure Sensor</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Temperature Sensor</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Photocell</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Testing/Validation</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Circuit Analysis</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Soldering</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Oscilloscope</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Function Generator</span>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Testing/Validation</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Circuit Analysis</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Soldering</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Oscilloscope</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Function Generator</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="d-flex align-items-center" style="padding-top: 20px; padding-bottom: 1rem;">
+                <div class="d-flex align-items-center" style="padding-top: 40px; padding-bottom: 1rem;">
                     <img src=" ./images/design.svg" style="width: 60px; height: auto; " class="rounded d-inline">
-                    <h1 class="display-4 d-inline" style="margin-left: 10px;">Design</h1>
+                    <h1 class="display-5 d-inline" style="margin-left: 10px;">Design</h1>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead">Detailed Design</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Computer Aided Design</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Design for Manufacturability/Assembly</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Function Decomposition</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Pugh/WDM/AHP</span>
+                    <p class="text-uppercase text-left fw-bold lead">Detailed Design</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Computer Aided Design</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Design for Manufacturability/Assembly</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Function Decomposition</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Pugh/WDM/AHP</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Design Analysis</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Failure Modes and Effects Analysis</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Finite Element Analysis</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Computational Fluid Dynamics</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Physical Prototyping</span>
+                    <p class="text-uppercase text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Design Analysis</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Failure Modes and Effects Analysis</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Finite Element Analysis</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Computational Fluid Dynamics</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Physical Prototyping</span>
                 </div>
                 <div>
-                    <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Engineering Drafting/Reports</p>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Geometric Dimensioning and Tolerancing</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Bill of Materials</span>
-                    <span class="badge badge-pill badge-light" style="background-color: #23d1a683;">Product Life Cycle Analysis</span>
+                    <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Engineering Drafting/Reports</p>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Geometric Dimensioning and Tolerancing</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Bill of Materials</span>
+                    <span class="badge rounded-pill text-dark" style="background-color: #23d1a683;">Product Life Cycle Analysis</span>
                 </div>
             </div>
         </div>
@@ -248,20 +264,20 @@
 
     <div id="education" class="container" style="padding-top: 150px">
         <div class="row">
-            <h1 class="display-4 font-weight-bold">EDUCATION</h1>
+            <h1 class="display-5 fw-bold">EDUCATION</h1>
         </div>
         <div class="row" style="padding-top: 20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
                 <img src=" ./images/ubclogo.png " style="width: 60px; height: auto; " class="rounded d-inline">
-                <h1 class="display-4 d-inline" style="margin-left: 20px">University of British Columbia</h1>
+                <h1 class="display-5 d-inline" style="margin-left: 20px">University of British Columbia</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <p class="text-uppercase font-weight-bold lead" style="padding-top: 0.5rem">BASc in Mechanical Engineering - Biomedical Option</p>
-                <p class="text-left small">September 2019 → Expected May 2023</p>
-                <p class="text-left lead">Year 3: 3.66 CGPA</p>
-                <p class="text-left lead">Co-op: Completed 3/4 work terms; Available for 8 months beginning January 2022</p>
+                <h6 class="text-uppercase fw-bold lead" style="padding-top: 0.5rem">BASc in Mechanical Engineering - Biomedical Option</h6>
+                <p class="text-left">September 2019 → Expected May 2023</p>
+                <p class="text-left lead">Year 4: 3.66 CGPA</p>
+                <p class="text-left lead">Co-op: Completed 4/4 work terms; Available for full-time positions beginning May 2023</p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <img src="./images/ubc.jpg" class="img-fluid rounded">
@@ -270,12 +286,12 @@
         <div class="row" style="padding-top: 20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
                 <img src=" ./images/kpulogo.jpg " style="width: 60px; height: auto; " class="rounded d-inline">
-                <h1 class="display-4 d-inline" style="margin-left: 20px">Kwantlen Polytechnic University</h1>
+                <h1 class="display-5 d-inline" style="margin-left: 20px">Kwantlen Polytechnic University</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <p class="text-uppercase text-left font-weight-bold lead" style="padding-top: 1rem">Engineering First Year Certificate Program</p>
+                <p class="text-uppercase text-left fw-bold lead" style="padding-top: 1rem">Engineering First Year Certificate Program</p>
                 <p class="text-left small">September 2018 → May 2019</p>
                 <p class="text-left lead">Year 1: 3.89 CGPA</p>
                 <p class="text-left lead">Certificate in Engineering with Distinction</p>
@@ -288,20 +304,53 @@
 
     <div id="work" class="container" style="padding-top: 150px">
         <div class="row">
-            <h1 class="font-weight-bold display-4">WORK EXPERIENCE</h1>
+            <h1 class="fw-bold display-5">WORK EXPERIENCE</h1>
         </div>
-        
         <div class="row" style="padding-top: 20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
-                <img src=" ./images/3dque.png " style="width: 60px; height: auto; " class="rounded d-inline">
-                <a class="navbar-brand text-dark" href="https://www.3dque.com/" target="_blank">
-                    <h1 class="display-4 d-inline" style="margin-left: 20px">3DQue Systems Inc.</h1>
+                <img src=" ./images/zooxlogo.png " style="width: 90px; height: auto; " class="rounded d-inline">
+                <div class="row">
+                    <a class="navbar-brand text-dark" href="https://zoox.com/" target="_blank">
+                        <h6 class="display-5 d-inline" style="margin-left: 20px">Zoox</h6>
+                    </a>
+                    <small class="d-inline" style="margin-left: 20px; padding-bottom: 15px;">(Acquired by Amazon)</small>
+                </div>
+            </div>    
+        </div> 
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="fw-bold lead" style="padding-top: 0.7rem">MECHANICAL ENGINEER CO-OP (BODY & CLOSURES TEAM)</p>
+                <small class="d-inline">Foster City, California</small>
+                <p class="text-left small">Incoming: May 2022 → August 2022</p>
+            </div>
+        </div>  
+        <div class="row" style="padding-top: 20px">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
+                <img src=" ./images/blackberrylogo.jpg" style="width: 90px; height: auto; " class="rounded d-inline">
+                <a class="navbar-brand text-dark" href="https://www.blackberry.com/us/en" target="_blank">
+                    <h6 class="display-5 d-inline" style="margin-left: 20px">BlackBerry</h6>
                 </a>
             </div>    
         </div> 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p class="font-weight-bold lead" style="padding-top: 0.5rem">MACHINE LEARNING & HARDWARE ENGINEER</p>
+                <p class="fw-bold lead" style="padding-top: 0.7rem">SOFTWARE & HARDWARE ENGINEER CO-OP</p>
+                <small class="d-inline">Waterloo, Ontario</small>
+                <p class="text-left small">January 2022 → May 2022</p>
+            </div>
+        </div>    
+        <div class="row" style="padding-top: 20px">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
+                <img src=" ./images/3dque.png " style="width: 90px; height: auto; " class="rounded d-inline">
+                <a class="navbar-brand text-dark" href="https://www.3dque.com/" target="_blank">
+                    <h1 class="display-5 d-inline" style="margin-left: 20px">3DQue Systems Inc.</h1>
+                </a>
+            </div>    
+        </div> 
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="fw-bold lead" style="padding-top: 0.5rem">MACHINE LEARNING & HARDWARE ENGINEER CO-OP</p>
+                <small class="d-inline">Vancouver, British Columbia</small>
                 <p class="text-left small">May 2021 → August 2021</p>
                 <p class="text-left lead">Startup which has created a 3D printing automation system that can make stock 3D printers in to production machines. Product allows for any number of GCODE files to be queued up and printed continuously as printer autonomously pushes off finished parts and starts next print. </p>
                 <p class="text-left lead">→ Leading development of a 3D printer monitoring system which detects a variety of common 3D printing failure modes by building temporal object detection models with TensorFlow and PyTorch</p>
@@ -312,15 +361,16 @@
         </div>
         <div class="row" style="padding-top: 20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
-                <img src=" ./images/bioformlogo.jpg" style="width: 60px; height: auto; " class="rounded d-inline">
+                <img src=" ./images/bioformlogo.jpg" style="width: 90px; height: auto; " class="rounded d-inline">
                 <a class="navbar-brand text-dark" href="https://www.shapingsustainability.com/" target="_blank">
-                    <h1 class="display-4 d-inline" style="margin-left: 20px">BIOFORM Technology</h1>
+                    <h1 class="display-5 d-inline" style="margin-left: 20px">BIOFORM Technology</h1>
                 </a>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p class="text-left font-weight-bold lead" style="padding-top: 1rem">MECHANICAL DESIGN ENGINEER</p>
+                <p class="text-left fw-bold lead" style="padding-top: 1rem">MECHANICAL DESIGN ENGINEER CO-OP</p>
+                <small class="d-inline">Vancouver, British Columbia</small>
                 <p class="text-left small">July 2020 → July 2021</p>
                 <p class="text-left lead">Startup within e@UBC Hatch Accelerator Program which is developing a manufacturing platform that rapidly produces biodegradable alternatives to plastics</p>
                 <p class="text-left lead">→ Responsible for designing and prototyping custom multi-layer nozzles, posttreatment and winding systems for production platform which will create stretch wrap and medical tubing for our pilot trial</p>
@@ -329,15 +379,16 @@
         </div>
         <div class="row" style="padding-top: 20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
-                <img src=" ./images/verdilogo.jpg" style="width: 60px; height: auto; " class="rounded d-inline">
+                <img src=" ./images/verdilogo.jpg" style="width: 90px; height: auto; " class="rounded d-inline">
                 <a class="navbar-brand text-dark" href="https://verdiag.com/" target="_blank">
-                    <h1 class="display-4 d-inline" style="margin-left: 20px">Verdi Expeditions Inc.</h1>
+                    <h1 class="display-5 d-inline" style="margin-left: 20px">Verdi Expeditions Inc.</h1>
                 </a>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p class="text-left font-weight-bold lead" style="padding-top: 1rem">MACHINE LEARNING & MECHANICAL TEST ENGINEER</p>
+                <p class="text-left fw-bold lead" style="padding-top: 1rem">MACHINE LEARNING & MECHANICAL TEST ENGINEER CO-OP</p>
+                <small class="d-inline">Vancouver, British Columbia</small>
                 <p class="text-left small">September 2020 → December 2020</p>
                 <p class="text-left lead">Startup within e@UBC HATCH Accelerator Program which is developing a platform based around intelligent irrigation systems for efficient, climate-resilient agriculture</p>
                 <p class="text-left lead">→ Working on proprietary sensing unit to be used in new seed-round smart valves to sense flow/no-flow conditions through drip tube using a sensor and background neural network model</p>
@@ -346,28 +397,30 @@
         </div>
         <div class="row" style="padding-top: 20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex align-items-center">
-                <img src=" ./images/eubclogo.png " style="width: 60px; height: auto; " class="rounded d-inline">
+                <img src=" ./images/eubclogo.png " style="width: 90px; height: auto; " class="rounded d-inline">
                 <a class="navbar-brand text-dark" href="https://www.start.entrepreneurship.ubc.ca/" target="_blank">
-                    <h1 class="display-4 d-inline" style="margin-left: 20px">entrepreneurship@UBC</h1>
+                    <h1 class="display-5 d-inline text-break" style="margin-left: 20px">entrepreneurship@UBC</h1>
                 </a>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p class="font-weight-bold lead" style="padding-top: 0.5rem">MECHANICAL ENGINEERING CO-OP</p>
+                <p class="fw-bold lead" style="padding-top: 0.5rem">MECHANICAL ENGINEERING CO-OP</p>
+                <small class="d-inline">Vancouver, British Columbia</small>
                 <p class="text-left small">July 2020 → December 2020</p>
                 <p class="text-left lead">Simultaneously worked at two startups - BIOFORM Technology and Verdi Expeditions - within the e@UBC HATCH Accelerator Program where I designed and built mechanical systems while learning the nuances of entrepreneurship</p>
             </div>
         </div>
     </div>
 
-    <footer class="text-muted">
-        <div class="containter" style="padding-top: 150px">
-            <p style="text-align: center"> Copyright &copy; 2019-<script>document.write(new Date().getFullYear())</script> Leah Hua-Long Hartwell All Rights Reserved</p>
-        </div> 
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx " crossorigin="anonymous "></script>
+    <div class="container-fluid">
+        <footer class="text-muted">
+            <div class="containter" style="padding-top: 150px">
+                <p style="text-align: center"> Copyright &copy; 2019-<script>document.write(new Date().getFullYear())</script> Leah Hua-Long Hartwell All Rights Reserved</p>
+            </div> 
+        </footer>
+    </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
